@@ -22,4 +22,26 @@ O Svelte não é indicado para empresas ou projetos grandes, devido ao seu ecoss
 
  Mas em compensação ele é o melhor framework para se usar em projetos pequenos e médios, pois tem uma curva de aprendizagem rápida, código mais limpo e legível e performance no cliente.
 
- 
+ ## Instalação e Configuração
+
+ Para criar um novo projeto baseado neste modelo:
+
+ ``` 
+npx degit sveltejs/template svelte-app
+cd svelte-app 
+```
+
+Agora se deve instalar as dependencias... 
+
+ ``` 
+cd svelte-app
+npm install
+```
+
+E rodar o projeto...
+
+ ``` 
+npm run dev
+```
+
+Acesse [localhost:8080](http://localhost:8080/) . Você deverá ver seu aplicativo em execução. 

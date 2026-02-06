@@ -14,12 +14,32 @@
     onMount(async function () {
         const response = await fetch(endpoint);
         const data = await response.json();
+
+        if(data.status == "error")
+        dogsApiImageResponse = [];
+        else
         dogsApiImageResponse = data.message;
+    });
+
+    $effect(async () => {
+        const breed = data.post.dogBreed;
+        if (!breed) return;
+
+        const response = await fetch(
+            `https://dog.ceo/api/breed/${breed}/images`
+        );
+        const json = await response.json();
+        if(json.status == "error")
+        dogsApiImageResponse = [];
+        else
+        dogsApiImageResponse = json.message;
     });
 </script>
 
 <header>
-    <img src={doogleImg} alt="" />
+    <a href="http://localhost:5173/">
+    <img src={doogleImg} alt="dog">
+</a>
     <Input />
 </header>
 <main>

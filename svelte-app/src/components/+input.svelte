@@ -9,6 +9,7 @@
 
         goto(`/searchpage/${valor}`);
     }
+    
 </script>
 
 <div class="search-bar">
@@ -18,7 +19,6 @@
             type="text"
             placeholder="Pesquise uma raça de cachorro"
             bind:value={search}
-            on:keydown={(e) => e.key === "Enter" && pesquisar()}
         />
         <button
             type="button"

@@ -1,7 +1,5 @@
 <script>
     import Input from "../components/+input.svelte";
-    import Card from '../components/+card.svelte';
-
 
     import doogleImg from "../public/Doogle.png"
     

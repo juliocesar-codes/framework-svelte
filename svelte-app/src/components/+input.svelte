@@ -1,7 +1,7 @@
 <script>
     import { goto } from "$app/navigation";
     let search = "";
-    const breeds = ["Dachshund", "Bulldog", "Poodle", "German Shepherd"];
+    const breeds = ["Dachshund", "Bulldog", "Poodle", "Kombai"];
 
     function pesquisar() {
         const valor = search.trim().toLowerCase();

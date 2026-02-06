@@ -88,4 +88,7 @@
         padding: 30px;
         box-sizing: border-box;
     }
+    .img-error{
+        height: 550px;
+    }
 </style>

@@ -9,7 +9,6 @@
 
         goto(`/searchpage/${valor}`);
     }
-    
 </script>
 
 <div class="search-bar">
@@ -88,7 +87,6 @@
         border: 1px solid #dfe1e5;
         transition: box-shadow 0.1s linear;
         box-sizing: border-box;
-        
     }
     .div-input {
         border: none;

@@ -11,6 +11,7 @@
   .card {
     height: 250px;
     max-height: 1000px;
+    max-width: 500px;
     border-radius: 20px;
     overflow: hidden;
     display: flex;

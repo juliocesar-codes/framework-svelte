@@ -15,10 +15,8 @@
         const response = await fetch(endpoint);
         const data = await response.json();
 
-        if(data.status == "error")
-        dogsApiImageResponse = [];
-        else
-        dogsApiImageResponse = data.message;
+        if (data.status == "error") dogsApiImageResponse = [];
+        else dogsApiImageResponse = data.message;
     });
 
     $effect(async () => {
@@ -26,24 +24,28 @@
         if (!breed) return;
 
         const response = await fetch(
-            `https://dog.ceo/api/breed/${breed}/images`
+            `https://dog.ceo/api/breed/${breed}/images`,
         );
         const json = await response.json();
-        if(json.status == "error")
-        dogsApiImageResponse = [];
-        else
-        dogsApiImageResponse = json.message;
+        if (json.status == "error") {
+            dogsApiImageResponse = [];
+        } else {
+            dogsApiImageResponse = json.message;
+        }
     });
 </script>
 
 <header>
     <a href="http://localhost:5173/">
-    <img src={doogleImg} alt="dog">
-</a>
+        <img src={doogleImg} alt="dog" />
+    </a>
     <Input />
 </header>
 <main>
     <div class="container-photos">
+        {#if dogsApiImageResponse.length == 0}
+            <p>Error 404: Raça não encontrada</p>
+        {/if}
         {#each dogsApiImageResponse as dogImage}
             <Card src={dogImage} />
         {/each}
@@ -69,13 +71,14 @@
 
     main {
         display: flex;
-        flex-wrap: wrap;
         gap: 2rem;
         padding: 30px;
         padding-top: 100px;
         box-sizing: border-box;
     }
-
+    main p{
+        font-size: 20px;
+    }
     .container-photos {
         display: flex;
         flex-wrap: wrap;
